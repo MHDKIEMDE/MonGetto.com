@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('titre', 'Agent')
 @section('contente')
     <!--=============================
             BREADCRUMBS START
