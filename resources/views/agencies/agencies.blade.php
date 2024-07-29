@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('titre'. 'Agencies')
 @section('contente')
     <section class="breadcrumbs" style="background: url(./assets/images/breadcrumbs_bg.jpg);">
         <div class="breadcrumbs_overly">
