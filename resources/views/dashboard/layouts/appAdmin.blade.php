@@ -32,8 +32,7 @@
             </div>
 
             <a class="dashboard_sidebar_logo" href="{{ route('admin.home.index') }}">
-                {{-- <img src="{{ asset('assets/images/logo_1.png') }}" alt="MonGetto" class="img-fluid w-100"> --}}
-                <h3 style="color: white">MonGetto.com</h3>
+                <img src="{{ asset('assets/images/logo_1.png') }}" alt="MonGetto" class="img-fluid w-100">
             </a>
             <div class="dashboard_sidebar_user">
 
@@ -67,7 +66,7 @@
                         </a>
                     </li>
 
-                    {{-- <li class="nav-item">
+                    <li class="nav-item">
                         <a href="{{ route('admin.user.index') }}">
                             <span>
                                 <img src="{{ asset('assets/images/dashboard_icon_2.png') }}" alt="icon"
@@ -75,7 +74,7 @@
                             </span>
                             Profil
                         </a>
-                    </li> --}}
+                    </li>
                     <li>
                         <a href="{{ route('admin.propriete.index') }}">
                             <span>
@@ -85,7 +84,7 @@
                             Propriété
                         </a>
                     </li>
-                    {{-- <li>
+                    <li>
                         <a href="{{ route('admin.pricing') }}">
                             <span>
                                 <img src="{{ asset('assets/images/dashboard_icon_4.png') }}" alt="icon"
@@ -93,7 +92,7 @@
                             </span>
                             Pricing Plan
                         </a>
-                    </li> --}}
+                    </li>
 
                     <li>
                         <a href="{{ route('admin.propriete.liste') }}">
@@ -101,11 +100,11 @@
                                 <img src="{{ asset('assets/images/dashboard_icon_7.png') }}" alt="icon"
                                     class="img-fluid w-100">
                             </span>
-                           Liste
+                            Liste
                         </a>
                     </li>
 
-                    {{-- <li>
+                    <li>
                         <a href="{{ route('blog.create') }}">
                             <span>
                                 <img src="{{ asset('assets/images/dashboard_icon_7.png') }}" alt="icon"
@@ -113,10 +112,8 @@
                             </span>
                             Add Blog
                         </a>
-                    </li> --}}
-
-
-                    {{-- <li>
+                    </li>
+                    <li>
                         <a href="{{ route('admin.wishlist') }}">
                             <span>
                                 <img src="{{ asset('assets/images/dashboard_icon_6.png') }}" alt="icon"
@@ -124,8 +121,8 @@
                             </span>
                             favoris
                         </a>
-                    </li>  --}}
-{{-- 
+                    </li>
+
                     <li>
                         <a href="{{ route('admin.review') }}">
                             <span>
@@ -134,7 +131,7 @@
                             </span>
                             Commentaires
                         </a>
-                    </li> --}}
+                    </li>
 
                     <li>
                         <a
@@ -153,13 +150,14 @@
                 </ul>
             </div>
         </div>
+
         @yield('contents')
+
         <div class="progress-wrap">
             <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
                 <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
             </svg>
         </div>
-
 
         <!--jquery library js-->
         <script src="{{ asset('assets/js/jquery-3.7.1.min.js') }}"></script>
@@ -191,7 +189,6 @@
         <script src="{{ asset('assets/js/scroll_button.js') }}"></script>
         <!--main/custom js-->
         <script src="{{ asset('assets/js/script.js') }}"></script>
-
 
 </body>
 

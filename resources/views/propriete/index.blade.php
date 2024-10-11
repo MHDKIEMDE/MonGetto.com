@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('contente')
 
     <section class="breadcrumbs" style="background: url(./assets/images/breadcrumbs_bg.jpg);">
@@ -675,75 +676,85 @@
             </div>
 
             <div class="row mt_95 xs_mt_75">
-                <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
-                    <div class=" single_property">
-                        <div class="single_property_img">
-                            <img src="assets/images/property_1.jpg" alt="img" class="img-fluid w-100">
-                            <a class="feature_link" href="#">for rent</a>
-                            <a class="feature_link feature" href="#">Featured</a>
-                            <ul class="d-flex flex-wrap">
-                                <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fas fa-plus"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="single_property_text">
-                            <div class="single_property_top">
-                                <a class="item_title" href="property_details.html">Hermosa Casa al Norte</a>
-                                <p><i class="fas fa-map-marker-alt"></i>28B Highgate Road, London</p>
+                @foreach ($proprietes as $pro)
+                    <div class="col-xl-4 col-md-6 wow fadeInUp" data-wow-duration="1.5s">
+                        <div class=" single_property">
+                            <div class="single_property_img">
+                                @if ($pro->images && $pro->images->isNotEmpty())
+                                    <img src="{{ asset('storage/' . $pro->images->first()->url) }}" alt="property"
+                                        class="img-fluid w-100">
+                                @else
+                                    <img src="{{ asset('assets/images/property_1.jpg') }}" alt="img"
+                                        class="img-fluid w-100">
+                                @endif
+                                <a class="feature_link" href="#">à louer</a>
+                                <a class="feature_link feature" href="#">À la une</a>
                                 <ul class="d-flex flex-wrap">
-                                    <li>
-                                        <span><img src="assets/images/bad.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        8 Beds
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/bathtab.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        6 Baths
-                                    </li>
-                                    <li>
-                                        <span><img src="assets/images/squre.png" alt="img"
-                                                class="img-fluid w-100"></span>
-                                        2400 Sq Ft
-                                    </li>
+                                    <li><a href="#"><i class="fas fa-share-alt"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fas fa-plus"></i></a></li>
                                 </ul>
                             </div>
-                            <div class="single_property_bottom d-flex flex-wrap justify-content-between">
-                                <a class="read_btn" href="{{ route('propriete.show', $propriete->id) }}">More Details<i
-                                        class="fas fa-arrow-right"></i></a>
-                                <p>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <span>4.5</span>
-                                </p>
+                            <div class="single_property_text">
+                                <div class="single_property_top">
+                                    <a class="item_title" href="#">
+                                        KIEMDE MOHAMED
+                                    </a>
+                                    <p>
+                                        <i class="fas fa-map-marker-alt">
+                                        </i> {{ $pro->ville->name }} /
+                                        {{ $pro->ville->pays->name }}
+                                    </p>
+                                    <ul class="d-flex flex-wrap">
+                                        <li>
+                                            <span><img src="assets/images/bad.png" alt="img"
+                                                    class="img-fluid w-100"></span>
+                                            8 Beds
+                                        </li>
+                                        <li>
+                                            <span><img src="assets/images/bathtab.png" alt="img"
+                                                    class="img-fluid w-100"></span>
+                                            6 Baths
+                                        </li>
+                                        <li>
+                                            <span><img src="assets/images/squre.png" alt="img"
+                                                    class="img-fluid w-100"></span>
+                                            2400 Sq Ft
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="single_property_bottom d-flex flex-wrap justify-content-between">
+                                    <a class="read_btn" href="property_details.html">More Details<i
+                                            class="fas fa-arrow-right"></i></a>
+                                    <p>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>4.5</span>
+                                    </p>
+                                </div>
+                                <span class="property_price">{{ number_format($pro->loyers, 0, ',', ' ') }}
+                                    FCFA</span>
                             </div>
-                            <span class="property_price">$12,000</span>
                         </div>
                     </div>
-                </div>
+                @endforeach
             </div>
-            <div class="row mt_50 wow fadeInUp" data-wow-duration="1.5s">
-                <div class=" col-12">
-                    <div id="pagination_area">
-                        <nav aria-label="...">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item"><a class="page-link" href="#"><i
-                                            class="far fa-angle-double-left" aria-hidden="true"></i></a></li>
-                                <li class="page-item"><a class="page-link active" href="#">01</a></li>
-                                <li class="page-item"><a class="page-link" href="#">02</a></li>
-                                <li class="page-item"><a class="page-link" href="#">03</a></li>
-                                <li class="page-item"><a class="page-link" href="#"><i
-                                            class="far fa-angle-double-right" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </nav>
-                    </div>
+
+        </div>
+        
+        <div class="row mt_50 wow fadeInUp" data-wow-duration="1.5s">
+            <div class="col-12">
+                <div id="pagination_area">
+                    <nav aria-label="...">
+                        {{ $proprietes->links('vendor.pagination.custom') }}
+                    </nav>
                 </div>
             </div>
         </div>
+
     </section>
 
 @endsection

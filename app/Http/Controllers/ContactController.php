@@ -8,12 +8,25 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
+
+
+
+    public function dashboardReview()
+    {
+        $contacts = Contact::paginate(10);
+
+        return view('dashboard.dashboard_Review',compact('contacts'));
+    }
+
+
+
     public function edit()
     {
         $contacts = Contact::paginate(10);
 
-        return view('dashboard.contact.index', compact('contacts'));
+        return view('dashboard.', compact('contacts'));
     }
+
 
     public function create()
     {
@@ -21,7 +34,7 @@ class ContactController extends Controller
     }
     public function store(ContactRequest $request)
     {
-        $contact = new Contact();  
+        $contact = new Contact();
         $contact->user_id = null;
         $contact->name = $request->input('name');
         $contact->last_name = $request->input('last_name');
@@ -30,7 +43,7 @@ class ContactController extends Controller
         $contact->message = $request->input('message');
         $contact->save();
 
-        return redirect()->back(); 
+        return redirect()->back();
     }
 
     public function show(string $blog)
@@ -45,7 +58,7 @@ class ContactController extends Controller
     {
         $contacts = Contact::findOrFail($id);
         $contacts->delete();
-        
+
         return redirect()->back()->with('success', 'Message supprimés avec succès!');
     }
 }

@@ -21,25 +21,25 @@ class ProprieteController extends Controller
     public function index()
     {
         $proprietes = Propriete::with(['images', 'user'])->paginate(10);
-        return view('dashboard.propriete.index', compact('proprietes'));
+        return view('propriete.index', compact('proprietes'));
     }
 
     public function index2()
     {
         $proprietes = Propriete::with(['images', 'user'])->paginate(10);
-        return view('propriete.index2', compact('proprietes'));
+        return view('propriete.propriete_lv', compact('proprietes'));
     }
 
     public function index3()
     {
         $proprietes = Propriete::with(['images', 'user'])->paginate(10);
-        return view('propriete.index3', compact('proprietes'));
+        return view('propriete.propriete_sl', compact('proprietes'));
     }
 
     public function index4()
     {
         $proprietes = Propriete::with(['images', 'user'])->paginate(10);
-        return view('propriete.index4', compact('proprietes'));
+        return view('propriete.propriete_rs', compact('proprietes'));
     }
 
     public function create()
@@ -89,9 +89,9 @@ class ProprieteController extends Controller
 
     public function show(string $id)
     {
-        $propriete = Propriete::findOrFail($id);
+        $proprietes = Propriete::findOrFail($id);
 
-        return view('propriete.property_details', compact('propriete'));
+        return view('propriete.show', compact('proprietes'));
     }
 
     public function edit($propriete)

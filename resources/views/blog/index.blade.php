@@ -34,7 +34,7 @@
                                 </a>
                             @else
                                 <a href="{{ route('blog.show', $blog->id) }}" class="blog_img">
-                                    <img src="assets/images/blog_1.jpg" alt="img" class="img-fluid w-100">
+                                    <img src="{{ asset('assets/images/blog_1.jpg') }}" alt="img" class="img-fluid w-100">
 
                                 </a>
                             @endif
@@ -66,6 +66,7 @@
                     </div>
                 @endforeach
             </div>
+
             <div class="row mt_50 wow fadeInUp" data-wow-duration="1.5s">
                 <div class="col-12">
                     <div id="pagination_area">
@@ -75,6 +76,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
     </section>
 

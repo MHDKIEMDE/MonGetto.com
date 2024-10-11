@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Accueil')
 @section('contente')
-    {{-- <section class="banner_area" style="background: url(./assets/images/banner_bg.jpg);">
+    <section class="banner_area" style="background: url(./assets/images/banner_bg.jpg);">
         <div class="container container_large">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
                 <div class="col-xl-11 col-xxl-9">
@@ -753,7 +753,7 @@
                     <div class="single_destination">
                         <img src="{{ asset('assets/images/destination_1.jpg') }}" alt="img" class="img-fluid w-100">
                         <div class="destination_address">
-                            <a href="{{ route('user.property_grid_view') }}"><i class="far fa-arrow-right"></i></a>
+                            <a href="#"><i class="far fa-arrow-right"></i></a>
                             <div class="destination_text">
                                 <h5>New York</h5>
                                 <p>04 Properties</p>
@@ -764,7 +764,7 @@
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
 
     <section class="property_area pt_115 xs_pt_95 pb_115 xs_pb_95">
         <div class="container">
@@ -893,7 +893,7 @@
                 <div class="col-xl-12">
                     <div class="find_state_text">
                         <h2>Residential</h2>
-                        <a href="{{ route('propriete.show', $pro->id) }}">Découvrez le projet<i
+                        <a href="#">Découvrez le projet<i
                                 class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>

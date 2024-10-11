@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MonGetto - @yield('titre')</title>
+    <title>MonGetto - @yield('title')</title>
 
     <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
@@ -56,11 +56,11 @@
                             <li><a href="{{ route('user.paiement') }}">paiement</a></li>
                             <li><a href="{{ route('user.error') }}">error</a></li>
                             <li><a href="{{ route('user.faq') }}">FAQ's</a></li>
-                            <li><a class="active" href="sign_in.html">sign in</a></li>
-                            <li><a href="sign_up.html">sign up</a></li>
+                            <li><a class="active" href="{{ route('login') }}">sign in</a></li>
+                            <li><a href="{{ route('register') }}">sign up</a></li>
                             <li><a href="{{ route('user.forgot_password') }}">forgot password</a></li>
                             <li><a href="{{ route('user.privacy_policy') }}">privacy policy</a></li>
-                            <li><a href="terms_condition.html">terms and condition</a></li>
+                            <li><a href="{{ route('user.pricing') }}">terms and condition</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -116,7 +116,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i
                 class="far fa-times"></i></button>
         <div class="offcanvas-body">
-            <a class="offcanvas_logo" href="index.html">
+            <a class="offcanvas_logo" href="{{ asset('/') }}">
                 <img src="{{ asset('assets/images/logo_1.png') }}" alt="MaxLand" class="img-fluid w-100">
             </a>
             <p class="short_description">Through a combination of lectures, readings, and discussions, students will
@@ -129,10 +129,12 @@
                             <img src="{{ asset('assets/images/offcanvas_img_3.jpg') }}" alt="blog"
                                 class="img-fluid w-100">
                         </div>
+
                         <div class="text">
                             <p><i class="far fa-clock"></i> 10 Dec 2024</p>
                             <a class="title" href="#">Hermosa Casa al Norte</a>
                         </div>
+
                     </li>
                     <li>
                         <div class="img">
@@ -159,8 +161,8 @@
 
             <div class="offcanvas_contact">
                 <h3>contact information</h3>
-                <a class="call" href="callto:40276328246">+(226) 07443112</a>
-                <a class="mail" href="mailto:example@gmail.com">mkiemde00@gmail.com</a>
+                <a class="call" href="callto:07443112">+(226) 07443112</a>
+                <a class="mail" href="mailto:mkiemde00@gmail.com">mkiemde00@gmail.com</a>
                 <ul class="d-flex flex-wrap">
                     <li><a class="facebook" href="#"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a></li>
@@ -183,7 +185,7 @@
                         <div class="row justify-content-between">
                             <div class="col-xl-5 col-sm-10 col-md-4 wow fadeInLeft" data-wow-duration="2s">
                                 <div class="footer_description">
-                                    <a class="footer_logo" href="index.html">
+                                    <a class="footer_logo" href="{{ route('user.home') }}">
                                         <img src="{{ asset('assets/images/footer_logo.png') }}" alt="logo"
                                             class="img-fluid w-100">
                                     </a>
@@ -200,11 +202,11 @@
                                 <div class="footer_link">
                                     <h4>Navigation</h4>
                                     <ul>
-                                        <li><a href="{{ URL::to('/') }}">Home One</a></li>
-                                        <li><a href="property.html">Properties Right</a></li>
-                                        <li><a href="property_details.html">Properties List</a></li>
-                                        <li><a href="property_details.html">Property Details</a></li>
-                                        <li><a href="agent.html">Agents Listing</a></li>
+                                        <li><a href="{{ route('user.home') }}">Home One</a></li>
+                                        <li><a href="{{ route('user.proprietes_rs') }}">Properties Right</a></li>
+                                        <li><a href="{{ route('user.propriete_l') }}">Properties List</a></li>
+                                        <li><a href="{{ route('propriete.index') }}">Property Details</a></li>
+                                        <li><a href="{{ route('user.agent') }}">Agents Listing</a></li>
                                     </ul>
                                 </div>
                             </div>

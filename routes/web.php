@@ -41,10 +41,9 @@ Route::prefix('dashboard')->name('admin.')->middleware(['auth'])->group(function
     Route::get('/wishlist', [AdminController::class, 'dashboardWishlist'])->name('wishlist');
     Route::get('/invoice', [AdminController::class, 'dashboardInvoice'])->name('invoice');
     Route::get('/pricing', [AdminController::class, 'dashboardPricing'])->name('pricing');
-    Route::get('/review', [AdminController::class, 'dashboardReview'])->name('review');
+    Route::get('/review', [ContactController::class, 'dashboardReview'])->name('review');
     Route::get('/propriete/liste', [ProprieteController::class, 'liste'])->name('propriete.liste');
 });
-
 
 
 Route::get('/', [UserController::class, 'home'])->name('user.home');
@@ -60,6 +59,5 @@ Route::prefix('')->name('')->group(function () {
     Route::resource('blog', BlogController::class);
     Route::resource('contact', ContactController::class);
 });
-
 
 Route::get('dashboard/propriete/liste', [ProprieteController::class, 'liste'])->name('admin.propriete.liste');

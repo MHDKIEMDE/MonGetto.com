@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('contente')
-    <!--=============================
-                BREADCRUMBS START
-            ==============================-->
+
     <section class="breadcrumbs" style="background: url(./assets/images/breadcrumbs_bg.jpg);">
         <div class="breadcrumbs_overly">
             <div class="container">
@@ -20,14 +18,7 @@
             </div>
         </div>
     </section>
-    <!--=============================
-                BREADCRUMBS END
-            ==============================-->
 
-
-    <!--=============================
-                PROPERTY LEFT SIDEBAR START
-            ==============================-->
     <section class="property_left_sidebar property_page pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row">
@@ -217,7 +208,7 @@
                         <div class="col-md-6 wow fadeInUp" data-wow-duration="1.5s">
                             <div class=" single_property">
                                 <div class="single_property_img">
-                                    <img src="assets/images/property_1.jpg" alt="img" class="img-fluid w-100">
+                                    <img src="" alt="img" class="img-fluid w-100">
                                     <a class="feature_link" href="#">for rent</a>
                                     <a class="feature_link feature" href="#">Featured</a>
                                     <ul class="d-flex flex-wrap">

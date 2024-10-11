@@ -3,6 +3,7 @@
 @section('titre', 'Details une maison')
 
 @section('contente')
+
     <section class="breadcrumbs" style="background: url(./assets/images/breadcrumbs_bg.jpg);">
         <div class="breadcrumbs_overly">
             <div class="container">
@@ -20,6 +21,7 @@
             </div>
         </div>
     </section>
+
     <section class="property_details pt_120 xs_pt_100 pb_105 xs_pb_85">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
@@ -360,7 +362,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

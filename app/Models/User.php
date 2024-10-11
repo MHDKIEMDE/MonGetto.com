@@ -25,6 +25,7 @@ class User extends Authenticatable
         'number_2',
         'ville',
         'pays',
+        'password',
         'quartier',
         'profile_image',
     ];

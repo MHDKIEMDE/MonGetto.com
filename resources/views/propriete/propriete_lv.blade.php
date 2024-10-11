@@ -558,7 +558,4 @@
             </div>
         </div>
     </section>
-    <!--=============================
-                    PROPERTY LIST VIEW END
-                ==============================-->
 @endsection
