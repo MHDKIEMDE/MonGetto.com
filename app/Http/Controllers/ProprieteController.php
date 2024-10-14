@@ -7,7 +7,7 @@ use App\Models\Equipements;
 
 use App\Models\Pays;
 use App\Models\Ville;
-use App\Models\Quartier;
+use App\Models\Quatier;
 use App\Models\Propriete;
 use App\Models\TypeMaison;
 use App\Http\Requests\ProprieteRequest;
@@ -50,11 +50,11 @@ class ProprieteController extends Controller
     {
         $pays = Pays::all();
         $ville = Ville::all();
-        $quartier = Quartier::all();
+        $quatier = Quatier::all();
         $typeMaison = TypeMaison::all();
         $equipements = Equipements::all();
 
-        return view('dashboard.propriete.create', compact('pays', 'ville', 'quartier', 'typeMaison', 'equipements'));
+        return view('dashboard.propriete.create', compact('pays', 'ville', 'quatier', 'typeMaison', 'equipements'));
     }
 
     public function store(ProprieteRequest $request)
@@ -64,7 +64,7 @@ class ProprieteController extends Controller
         $propriete->user_id = auth()->user()->id;
         $propriete->pays_id = $request->input('pays_id');
         $propriete->ville_id = $request->input('ville_id');
-        $propriete->quartier_id = $request->input('quartier_id');
+        $propriete->quatier_id = $request->input('quatier_id');
         $propriete->typeMaison_id = $request->input('typeMaison_id');
         $propriete->nbre_C = $request->input('nbre_C');
         $propriete->loyers = $request->input('loyers');
@@ -103,10 +103,10 @@ class ProprieteController extends Controller
         $propriete = Propriete::findOrFail($propriete);
         $pays = Pays::all();
         $ville = Ville::all();
-        $quartier = Quartier::all();
+        $quatier = Quatier::all();
         $typeMaison = TypeMaison::all();
 
-        return view('dashboard.propriete.edit', compact('propriete', 'pays', 'ville', 'quartier', 'typeMaison'));
+        return view('dashboard.propriete.edit', compact('propriete', 'pays', 'ville', 'quatier', 'typeMaison'));
     }
 
     public function update(ProprieteRequest $request, string $propriete)

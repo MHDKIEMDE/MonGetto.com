@@ -54,11 +54,11 @@
                                 </select>
                             </div>
                             <div class="col-xxl-6 col-md-6">
-                                <label for="quartier">Quartier</label>
-                                <select class="form-select" name="quartier_id" id="quartier"
+                                <label for="quatier">Quatier</label>
+                                <select class="form-select" name="quatier_id" id="quatier"
                                     aria-label="Default select example">
-                                    <option selected>Sectionner un Quartier</option>
-                                    @foreach ($quartier as $q)
+                                    <option selected>Sectionner un Quatier</option>
+                                    @foreach ($quatier as $q)
                                         <option value="{{ $q->id }}">{{ $q->name }}</option>
                                     @endforeach
                                 </select>

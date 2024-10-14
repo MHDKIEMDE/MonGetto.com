@@ -26,7 +26,7 @@
                                 <li><span>Email :</span> {{ $user->email }}</li>
                                 <li><span>Ville :</span> {{ $user->ville }}</li>
                                 <li><span>Pays :</span> {{ $user->pays }}</li>
-                                <li><span>Quartier :</span> {{ $user->quartier }}</li>
+                                <li><span>Quatier :</span> {{ $user->quatier }}</li>
                             </ul>
                             <ul class="icon d-flex flex-wrap">
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -81,9 +81,9 @@
                                 placeholder="Pays">
                         </div>
                         <div class="col-xl-4 col-lg-6">
-                            <label for="quartier">Quartier</label>
-                            <input type="text" name="quartier" id="quartier"
-                                value="{{ old('quartier', $user->quartier) }}" placeholder="quartier">
+                            <label for="quatier">Quatier</label>
+                            <input type="text" name="quatier" id="quatier"
+                                value="{{ old('quatier', $user->quatier) }}" placeholder="quatier">
                         </div>
                         <div class="col-xl-4 col-lg-6">
                             <label for="photo_profile">Photo de profil</label>

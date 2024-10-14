@@ -47,7 +47,7 @@ class TypeMaisonController extends Controller
     {
         $typeMaison = TypeMaison::findOrFail($typeMaison);
 
-        return view('dashboard.typeMaison.show', compact('typeMaison', 'quartier', 'ville'));
+        return view('dashboard.typeMaison.show', compact('typeMaison','ville'));
     }
 
 

@@ -6,7 +6,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EquipementController;
 use App\Http\Controllers\PaysController;
 use App\Http\Controllers\ProprieteController;
-use App\Http\Controllers\QuartierController;
+use App\Http\Controllers\QuatierController;
 use App\Http\Controllers\TypeMaisonController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VilleController;
@@ -33,7 +33,7 @@ Route::prefix('dashboard')->name('admin.')->middleware(['auth'])->group(function
     Route::resource('user', UserController::class);
     Route::resource('pays', PaysController::class);
     Route::resource('ville', VilleController::class);
-    Route::resource('quartier', QuartierController::class);
+    Route::resource('quatier', QuatierController::class);
     Route::resource('propriete', ProprieteController::class);
     Route::resource('typeMaison', TypeMaisonController::class);
     Route::resource('equipement', EquipementController::class);

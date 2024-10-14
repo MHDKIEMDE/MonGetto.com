@@ -5,14 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Quartier extends Model
+class UserImage extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'ville_id'];
 
-    public function ville()
+    protected $fillable = ['name', 'user_id', 'url'];
+
+    
+    public function user()
     {
-        return $this->belongsTo(Ville::class);
+        return $this->belongsTo(User::class);
     }
 }

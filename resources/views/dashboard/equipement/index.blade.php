@@ -7,7 +7,7 @@
         <h2 class="dashboard_title"> Dashboard Equipements
             <a class="common_btn" href="{{ route('admin.equipement.create') }}">+ show Equipement</a>
             <a class="common_btn" href="{{ route('admin.pays.index') }}">+ Show Pays</a>
-            <a class="common_btn" href="{{ route('admin.quartier.index') }}">+ Show Quartier</a>
+            <a class="common_btn" href="{{ route('admin.quatier.index') }}">+ Show Quatier</a>
             <a class="common_btn" href="{{ route('admin.ville.index') }}">+ show Ville</a>
             <a class="common_btn" href="{{ route('admin.typeMaison.index') }}">+ show TypeMaison</a>
 

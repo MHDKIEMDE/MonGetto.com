@@ -9,23 +9,23 @@ class Ville extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'quartier', 'pays_id'];
+    protected $fillable = ['name', 'quatier', 'pays_id'];
 
     public function pays()
     {
         return $this->belongsTo(Pays::class);
     }
 
-    public function quartiers()
+    public function quatiers()
     {
-        return $this->hasMany(Quartier::class);
+        return $this->hasMany(Quatier::class);
     }
 
     protected static function booted()
     {
         static::deleting(function ($ville) {
-            $ville->quartiers()->each(function ($quartier) {
-                $quartier->delete();
+            $ville->quatiers()->each(function ($quatier) {
+                $quatier->delete();
             });
         });
     }

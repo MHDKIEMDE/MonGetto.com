@@ -746,7 +746,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-7 wow fadeInUp" data-wow-duration="1.5s">
                     <div class="section_heading mb_50">
-                        <h2>Explorer votre quartier</h2>
+                        <h2>Explorer votre quatier</h2>
                     </div>
                 </div>
             </div>
@@ -809,10 +809,6 @@
                                         {{ $pro->ville->pays->name }}
                                     </p>
                                     <ul class="list-unstyled d-flex flex-wrap">
-
-
-
-
                                     </ul>
                                 </div>
                                 <div class="single_property_bottom d-flex flex-wrap justify-content-between">

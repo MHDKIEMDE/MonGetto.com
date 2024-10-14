@@ -2,12 +2,12 @@
 
 @section('contents')
     <div class="dashboard_content">
-        <h2 class="dashboard_title">add Quartier
-            <a class="common_btn" href="{{ route('admin.quartier.index') }}">Show Quartier</a>
+        <h2 class="dashboard_title">add Quatier
+            <a class="common_btn" href="{{ route('admin.quatier.index') }}">Show Quatier</a>
         </h2>
         <div class="dashboard_add_property">
             <div class="add_property_info wow fadeInUp" data-wow-duration="1.5s">
-                <h3>Ajouter un Quartier a la liste des Quartier</h3>
+                <h3>Ajouter un Quatier a la liste des Quatier</h3>
 
                 @if (session('success'))
                     <div class="alert alert-success">
@@ -29,7 +29,7 @@
                     </div>
                 @endif
 
-                <form method="POST" action="{{ route('admin.quartier.store') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('admin.quatier.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-xxl-6 col-md-6">
@@ -43,8 +43,8 @@
                         </div>
                         <div class="col-xxl-6 col-md-6">
                             <div class="add_property_input">
-                                <label for="quartier">Quartier</label>
-                                <input type="text" name="quartier" id="quartier" placeholder="quartier" required>
+                                <label for="quatier">Quatier</label>
+                                <input type="text" name="quatier" id="quatier" placeholder="quatier" required>
                             </div>
                         </div>
                         <div class="col-12">

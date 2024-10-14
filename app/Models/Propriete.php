@@ -21,9 +21,9 @@ class Propriete extends Model
         return $this->belongsTo(Ville::class);
     }
 
-    public function quartier()
+    public function quatier()
     {
-        return $this->belongsTo(Quartier::class);
+        return $this->belongsTo(Quatier::class);
     }
 
     public function typeMaison()

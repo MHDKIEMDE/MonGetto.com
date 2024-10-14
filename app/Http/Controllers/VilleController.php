@@ -84,6 +84,6 @@ class VilleController extends Controller
         $ville = Ville::findOrFail($id);
         $ville->delete();
 
-        return redirect()->route('admin.ville.index')->with('success', 'Ville et ses quartiers supprimés avec succès!');
+        return redirect()->route('admin.ville.index')->with('success', 'Ville et ses quatiers supprimés avec succès!');
     }
 }

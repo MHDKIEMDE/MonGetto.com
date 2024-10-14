@@ -34,9 +34,9 @@
                             </select>
                         </div>
                         <div class="col-xxl-4 col-md-6">
-                            <label>Quartier</label>
+                            <label>Quatier</label>
                             <select class="form-select" name="pays" id="pays" aria-label="Default select example">
-                                <option selected>Sectionner un Quartier</option>
+                                <option selected>Sectionner un Quatier</option>
                                 <option value="1200 logement"></option>
                                 <option value="#">#</option>
                                 <option value="#">#</option>

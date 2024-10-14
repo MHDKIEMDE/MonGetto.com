@@ -77,7 +77,8 @@
                                 <li>
                                     <a class="user_icon" href="{{ route('admin.user.index') }}">
                                         <span>
-                                            <img src="{{ asset('assets/images/user_icon_3.png') }}" alt="user" class="img-fluid w-100">
+                                            <img src="{{ asset('assets/images/user_icon_3.png') }}" alt="user"
+                                                class="img-fluid w-100">
                                         </span>
                                         {{ auth()->user()->name }}
                                     </a>
@@ -123,40 +124,26 @@
                 gain.</p>
             <div class="offcanvas_blog">
                 <h3>Featured Listings</h3>
-                <ul>
-                    <li>
-                        <div class="img">
-                            <img src="{{ asset('assets/images/offcanvas_img_3.jpg') }}" alt="blog"
-                                class="img-fluid w-100">
-                        </div>
-
-                        <div class="text">
-                            <p><i class="far fa-clock"></i> 10 Dec 2024</p>
-                            <a class="title" href="#">Hermosa Casa al Norte</a>
-                        </div>
-
-                    </li>
-                    <li>
-                        <div class="img">
-                            <img src="{{ asset('assets/images/offcanvas_img_1.jpg') }}" alt="blog"
-                                class="img-fluid w-100">
-                        </div>
-                        <div class="text">
-                            <p><i class="far fa-clock"></i> 10 Dec 2024</p>
-                            <a class="title" href="#">Stunning mansion in Reno</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="img">
-                            <img src="{{ asset('assets/images/offcanvas_img_2.jpg') }}" alt="blog"
-                                class="img-fluid w-100">
-                        </div>
-                        <div class="text">
-                            <p><i class="far fa-clock"></i> 10 Dec 2024</p>
-                            <a class="title" href="#">Luxury Villa In Los Angeles</a>
-                        </div>
-                    </li>
-                </ul>
+                @foreach ($proprietes as $pro)
+                    <ul>
+                        <li>
+                            <div class="img">
+                                @if ($pro->images && $pro->images->isNotEmpty())
+                                    <img src="{{ asset('storage/' . $pro->images->first()->url) }}" alt="property"
+                                        class="img-fluid w-100">
+                                @else
+                                    <img src="{{ asset('assets/images/offcanvas_img_3.jpg') }}" alt="blog"
+                                        class="img-fluid w-100">
+                                @endif
+                            </div>
+                            <div class="text">
+                                <p><i class="far fa-clock"></i> {{ \Carbon\Carbon::parse($pro->created_at)->format('d F Y') }}</p>
+                                <a class="title" href="#">{{ $pro->ville->name }} /
+                                    {{ $pro->ville->pays->name }}</a>
+                            </div>
+                        </li>
+                    </ul>
+                @endforeach
             </div>
 
             <div class="offcanvas_contact">

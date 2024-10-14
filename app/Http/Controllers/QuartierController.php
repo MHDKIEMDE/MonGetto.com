@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\QuartierRequest;
-use App\Models\Quartier;
+use App\Http\Requests\QuatierRequest;
+use App\Models\Quatier;
 use App\Models\Ville;
 use Illuminate\Http\Request;
 
-class QuartierController extends Controller
+class QuatierController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class QuartierController extends Controller
     public function index()
     {
 
-        $quartier = Quartier::with('ville.pays')->orderBy('created_at', 'desc')->paginate(10);
-        return view('dashboard.quartier.index', compact('quartier'));
+        $quatier = Quatier::with('ville.pays')->orderBy('created_at', 'desc')->paginate(10);
+        return view('dashboard.quatier.index', compact('quatier'));
     }
 
     /**
@@ -26,83 +26,83 @@ class QuartierController extends Controller
     {
         $ville = Ville::all();
 
-        return view('dashboard.quartier.create', compact('ville'));
+        return view('dashboard.quatier.create', compact('ville'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(QuartierRequest $request)
+    public function store(QuatierRequest $request)
     {
-        $existingQuartier = Quartier::where('name', $request->input('quartier'))
+        $existingQuatier = Quatier::where('name', $request->input('quatier'))
             ->where('ville_id', $request->input('ville_id'))
             ->first();
 
-        if ($existingQuartier) {
-            return redirect()->route('admin.quartier.create')->with('error', 'Ce Quartier existe déjà pour cette Ville!');
+        if ($existingQuatier) {
+            return redirect()->route('admin.quatier.create')->with('error', 'Ce Quatier existe déjà pour cette Ville!');
         }
 
-        $quartier = new Quartier();
-        $quartier->name = $request->input('quartier');
-        $quartier->ville_id = $request->input('ville_id');
+        $quatier = new Quatier();
+        $quatier->name = $request->input('quatier');
+        $quatier->ville_id = $request->input('ville_id');
 
-        if (!$quartier->save()) {
-            return redirect()->back()->with('error', 'Une erreur est survenue lors de l\'ajout du Quartier.');
+        if (!$quatier->save()) {
+            return redirect()->back()->with('error', 'Une erreur est survenue lors de l\'ajout du Quatier.');
         }
 
-        return redirect()->route('admin.quartier.create')->with('success', 'Quartier ajouté avec succès!');
+        return redirect()->route('admin.quatier.create')->with('success', 'Quatier ajouté avec succès!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $quartier)
+    public function show(string $quatier)
     {
-        $quartier = Quartier::findOrFail($quartier);
+        $quatier = Quatier::findOrFail($quatier);
 
-        return view('dashboard.quartier.show', compact('quartier'));
+        return view('dashboard.quatier.show', compact('quatier'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $quartier)
+    public function edit(string $quatier)
     {
-        $quartier = Quartier::findOrFail($quartier);
+        $quatier = Quatier::findOrFail($quatier);
 
-        return view('dashboard.quartier.edit', compact('quartier'));
+        return view('dashboard.quatier.edit', compact('quatier'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(QuartierRequest $request, string $quartier)
+    public function update(QuatierRequest $request, string $quatier)
     {
-        $quartier = Quartier::findOrFail($quartier);
-        $quartier->name = $request->input('quartier');
+        $quatier = Quatier::findOrFail($quatier);
+        $quatier->name = $request->input('quatier');
 
-        if (!$quartier->save()) {
-            return redirect()->back()->with('error', 'Une erreur est survenue lors de la mise à jour du quartier.');
+        if (!$quatier->save()) {
+            return redirect()->back()->with('error', 'Une erreur est survenue lors de la mise à jour du quatier.');
         }
 
-        return redirect()->route('admin.quartier.show')->with('success', 'Quartier mis à jour avec succès!');
+        return redirect()->route('admin.quatier.show')->with('success', 'Quatier mis à jour avec succès!');
     }
 
-    public function deleteQuartier($quartier)
+    public function deleteQuatier($quatier)
     {
-        $quartier = Quartier::findOrFail($quartier);
+        $quatier = Quatier::findOrFail($quatier);
 
-        if ($quartier->delete()) {
-            return redirect()->route('admin.quartier.show')->with('success', 'Quartier supprimé avec succès');
+        if ($quatier->delete()) {
+            return redirect()->route('admin.quatier.show')->with('success', 'Quatier supprimé avec succès');
         }
 
-        return redirect()->route('admin.quartier.show')->with('error', 'Une erreur est survenue lors de la suppression du Quartier.');
+        return redirect()->route('admin.quatier.show')->with('error', 'Une erreur est survenue lors de la suppression du Quatier.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $quartier)
+    public function destroy(string $quatier)
     {
     }
 }

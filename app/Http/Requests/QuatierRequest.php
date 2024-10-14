@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class QuartierRequest extends FormRequest
+class QuatierRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +23,7 @@ class QuartierRequest extends FormRequest
     {
         return [
            
-                'quartier' => 'required|string|max:255',
+                'quatier' => 'required|string|max:255',
                 'ville_id' => 'required|integer|exists:villes,id',
         ];
     }

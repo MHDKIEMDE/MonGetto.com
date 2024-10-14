@@ -29,7 +29,7 @@ class ProfileRequest extends FormRequest
             'number_2' => 'nullable|string|max:20',
             'ville' => 'nullable|string|max:255',
             'pays' => 'nullable|string|max:255',
-            'quartier' => 'nullable|string|max:255',
+            'quatier' => 'nullable|string|max:255',
             'photo_profile' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }

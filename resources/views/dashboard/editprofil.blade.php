@@ -49,7 +49,7 @@
 
             <div class="col-md-4">
                 <div class="mb-3">
-                    <label for="quarter" class="form-label">Quartier</label>
+                    <label for="quarter" class="form-label">Quatier</label>
                     <input type="text" class="form-control" id="quarter" name="quarter"
                         value="{{ old('quarter', $user->quarter) }}">
                 </div>

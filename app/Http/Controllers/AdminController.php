@@ -6,7 +6,7 @@ use App\Models\Blog;
 use App\Models\Contact;
 use App\Models\Pays;
 use App\Models\Propriete;
-use App\Models\Quartier;
+use App\Models\quatier;
 use App\Models\TypeMaison;
 use App\Models\User;
 use App\Models\Ville;
@@ -25,13 +25,13 @@ class AdminController extends Controller
         $userCount = User::count();
         $paysCount = Pays::count();
         $villeCount = Ville::count();
-        $quartierCount = Quartier::count();
+        $quatierCount = Quatier::count();
         $proprieteCount = Propriete::count();
         $blogsCount = Blog::count();
         $contactsCount = Contact::count();
         $typeMaisonCount = TypeMaison::count();
         $proprietes = Propriete::orderBy('created_at', 'desc')->paginate(3);
-        return view('dashboard.home.index',  compact('userCount', 'blogs', 'users', 'contactsCount', 'paysCount', 'villeCount', 'quartierCount', 'proprieteCount', 'blogsCount', 'typeMaisonCount', 'proprietes'));
+        return view('dashboard.home.index',  compact('userCount', 'blogs', 'users', 'contactsCount', 'paysCount', 'villeCount', 'quatierCount', 'proprieteCount', 'blogsCount', 'typeMaisonCount', 'proprietes'));
     }
 
 

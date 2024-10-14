@@ -30,7 +30,7 @@ class ProprieteRequest extends FormRequest
             'description' => 'nullable|string',
             'pays_id' => 'required|integer|exists:pays,id',
             'ville_id' => 'required|integer|exists:villes,id',
-            'quartier_id' => 'required|integer|exists:quartiers,id',
+            'quatier_id' => 'required|integer|exists:quatiers,id',
             'typeMaison_id' => 'required|integer|exists:type_maisons,id',
             'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ];

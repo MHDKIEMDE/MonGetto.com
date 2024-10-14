@@ -19,11 +19,10 @@ return new class extends Migration
             $table->string('prenom')->nullable();
             $table->string('number')->nullable();
             $table->string('number_2')->nullable();
-            $table->string('profile_image')->nullable();
             $table->string('email')->unique()->nullable();
             $table->string('pays')->nullable();
             $table->string('ville')->nullable();
-            $table->string('quartier')->nullable();
+            $table->string('quatier')->nullable();
             $table->string('password')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

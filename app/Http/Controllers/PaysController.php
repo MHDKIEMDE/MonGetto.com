@@ -43,7 +43,7 @@ class PaysController extends Controller
     {
         $pays = Pays::findOrFail($pay);
 
-        return view('dashboard.pays.show', compact('Pays', 'quartier', 'ville'));
+        return view('dashboard.pays.show', compact('Pays', 'quatier', 'ville'));
     }
 
 
@@ -71,6 +71,6 @@ class PaysController extends Controller
         $pays = Pays::findOrFail($id);
         $pays->delete();
 
-        return redirect()->route('admin.pays.index')->with('success', 'Pays et ses villes et quartiers supprimés avec succès!');
+        return redirect()->route('admin.pays.index')->with('success', 'Pays et ses villes et quatiers supprimés avec succès!');
     }
 }

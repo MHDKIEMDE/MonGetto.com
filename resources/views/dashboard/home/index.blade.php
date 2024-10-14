@@ -72,7 +72,7 @@
                                     </div>
                                 </div>
                                 <div class="single_bar">
-                                    <p>Quartier <span>{{ $quartierCount }}</span></p>
+                                    <p>Quatier <span>{{ $quatierCount }}</span></p>
                                     <div id="bar8" class="barfiller">
                                         <div class="tipWrap">
                                             <span class="tip"></span>

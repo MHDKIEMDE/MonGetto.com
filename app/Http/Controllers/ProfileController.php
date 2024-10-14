@@ -49,7 +49,7 @@ class ProfileController extends Controller
         $user->number_2 = $request->input('number_2');
         $user->ville = $request->input('ville');
         $user->pays = $request->input('pays');
-        $user->quartier = $request->input('quartier');
+        $user->quatier = $request->input('quatier');
 
         if ($request->hasFile('photo_profile')) {
             $imagePath = $request->file('photo_profile')->store('public/profile_images');

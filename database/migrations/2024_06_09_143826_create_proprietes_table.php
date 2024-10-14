@@ -13,7 +13,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('pays_id');
             $table->unsignedBigInteger('ville_id');
-            $table->unsignedBigInteger('quartier_id');
+            $table->unsignedBigInteger('quatier_id');
             $table->unsignedBigInteger('typeMaison_id');
             $table->integer('nbre_C');
             $table->decimal('loyers', 10, 2);

@@ -31,12 +31,12 @@
                             </select>
                         </div>
                         <div class="col-xxl-4 col-md-6">
-                            <label for="quartier_id">Quartier</label>
-                            <select class="form-select" name="quartier_id" id="quartier_id"
+                            <label for="quatier_id">Quatier</label>
+                            <select class="form-select" name="quatier_id" id="quatier_id"
                                 aria-label="Default select example">
-                                <option selected>Sectionner un Quartier</option>
+                                <option selected>Sectionner un Quatier</option>
                                 @foreach ($propriete as $pro)
-                                    <option value="{{ $pro->quartier_id }}">{{ $pro->name }}</option>
+                                    <option value="{{ $pro->quatier_id }}">{{ $pro->name }}</option>
                                 @endforeach
                             </select>
                         </div>

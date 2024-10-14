@@ -16,7 +16,7 @@
                             <th class="details">Details</th>
                             <th class="prix">Prix</th>
                             <th class="status">Status</th>
-                            <th class="status">Ville/Quartier</th>
+                            <th class="status">Ville/Quatier</th>
                             <th class="action">Action</th>
                         </tr>
                     </thead>
@@ -48,7 +48,7 @@
                                 <td class="status">
                                     <span class="sold">sale</span>
                                 </td>
-                                <td class="ville/quartier">
+                                <td class="ville/quatier">
                                     <p class="sold">
                                         {{ $pro->ville->name }} / {{ $pro->ville->pays->name }}
                                     </p>

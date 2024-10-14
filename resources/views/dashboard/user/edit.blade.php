@@ -31,11 +31,11 @@
             </div>
         </div>
         <div class="dashboard_profile">
-
             <div class="dashboard_profile_info">
                 <div class="row">
                     <div class="col-xxl-4 col-md-5 col-lg-6 col-xl-5 wow fadeInLeft" data-wow-duration="1.5s">
                         <div class="dashboard_profile_img">
+
                             @if ($user->profile_image)
                                 <img src="{{ asset('storage/' . $user->profile_image) }}" alt=""
                                     class="img-fluid w-100">
@@ -43,6 +43,7 @@
                                 <img src="{{ asset('assets/images/default_img.jpg') }}" alt="Default Image"
                                     class="img-fluid w-100">
                             @endif
+                            
                         </div>
                     </div>
                     <div class="col-xxl-8 col-md-7 col-lg-6 col-xl-7 wow fadeInRight" data-wow-duration="1.5s">
@@ -52,7 +53,7 @@
                                 <li><span>Email :</span> {{ $user->email }}</li>
                                 <li><span>Ville :</span> {{ $user->ville }}</li>
                                 <li><span>Pays :</span> {{ $user->pays }}</li>
-                                <li><span>Quartier :</span> {{ $user->quartier }}</li>
+                                <li><span>Quatier :</span> {{ $user->quatier }}</li>
                             </ul>
                             <ul class="icon d-flex flex-wrap">
                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -89,8 +90,8 @@
                         </div>
                         <div class="col-xl-4 col-lg-6">
                             <label for="number">Numero</label>
-                            <input type="text" name="number" id="number" value="{{ old('number', $user->number) }}"
-                                placeholder="Numero">
+                            <input type="text" name="number" id="number"
+                                value="{{ old('number', $user->number) }}" placeholder="Numero">
                         </div>
                         <div class="col-xl-4 col-lg-6">
                             <label for="number_2">number_2</label>
@@ -99,8 +100,8 @@
                         </div>
                         <div class="col-xl-4 col-lg-6">
                             <label for="ville">Ville</label>
-                            <input type="text" name="ville" id="ville" value="{{ old('ville', $user->ville) }}"
-                                placeholder="Ville">
+                            <input type="text" name="ville" id="ville"
+                                value="{{ old('ville', $user->ville) }}" placeholder="Ville">
                         </div>
                         <div class="col-xl-4 col-lg-6">
                             <label for="pays">Pays</label>
@@ -108,9 +109,9 @@
                                 placeholder="Pays">
                         </div>
                         <div class="col-xl-4 col-lg-6">
-                            <label for="quartier">Quartier</label>
-                            <input type="text" name="quartier" id="quartier"
-                                value="{{ old('quartier', $user->quartier) }}" placeholder="quartier">
+                            <label for="quatier">quatier</label>
+                            <input type="text" name="quatier" id="quatier"
+                                value="{{ old('quatier', $user->quatier) }}" placeholder="quatier">
                         </div>
                         <div class="col-xl-4 col-lg-6">
                             <label for="photo_profile">Photo de profil</label>

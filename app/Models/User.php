@@ -16,22 +16,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-
-        'name',
-        'prenom',
-        'email',
-        'number',
-        'number_2',
-        'ville',
-        'pays',
-        'password',
-        'quartier',
-        'profile_image',
-    ];
-
-
-
+    protected $fillable = ['name', 'prenom', 'email', 'number', 'number_2', 'ville', 'pays', 'password', 'quatier', 'images',];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -60,11 +45,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Propriete::class);
     }
-    
+
     public function blog()
     {
         return $this->hasMany(Blog::class);
     }
-
-  
 }
