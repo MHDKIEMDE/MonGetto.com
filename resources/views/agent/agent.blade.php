@@ -1,9 +1,9 @@
 @extends('layouts.app')
-@section('titre', 'Agent')
+
+@section('title', 'Agent')
+
 @section('contente')
-    <!--=============================
-            BREADCRUMBS START
-        ==============================-->
+
     <section class="breadcrumbs" style="background: url(./assets/images/breadcrumbs_bg.jpg);">
         <div class="breadcrumbs_overly">
             <div class="container">
@@ -21,14 +21,7 @@
             </div>
         </div>
     </section>
-    <!--=============================
-            BREADCRUMBS END
-        ==============================-->
 
-
-    <!--=============================
-            AGENT 2 START
-        ==============================-->
     <section class="agent_2 pt_115 xs_pt_95 pb_120 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -280,7 +273,5 @@
             </div>
         </div>
     </section>
-    <!--=============================
-            AGENT 2 END
-        ==============================-->
+
 @endsection

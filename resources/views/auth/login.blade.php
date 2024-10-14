@@ -1,6 +1,8 @@
 @extends('layouts.app')
-@section('contente')
 
+@section('tilte', 'Login')
+
+@section('contente')
     <section class="breadcrumbs" style="background: url(./assets/images/breadcrumbs_bg.jpg);">
         <div class="breadcrumbs_overly">
             <div class="container">

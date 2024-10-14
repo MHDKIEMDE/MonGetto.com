@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('tilte', ' Propriete')
+
 @section('contente')
 
     <section class="breadcrumbs" style="background: url(./assets/images/breadcrumbs_bg.jpg);">

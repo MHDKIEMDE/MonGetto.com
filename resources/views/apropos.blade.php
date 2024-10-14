@@ -3,6 +3,7 @@
 @section('title', 'About us')
 
 @section('contente')
+
     <section class="breadcrumbs" style="background: url(./assets/images/breadcrumbs_bg.jpg);">
         <div class="breadcrumbs_overly">
             <div class="container">

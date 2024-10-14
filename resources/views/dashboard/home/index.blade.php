@@ -1,4 +1,5 @@
 @extends('dashboard.layouts.appAdmin')
+
 @section('tilte', ' Dashboard')
 
 @section('contents')

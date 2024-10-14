@@ -1,8 +1,9 @@
 @extends('layouts.app')
+
+@section('tilte', ' Propriete')
+
 @section('contente')
-    <!--=============================
-                        BREADCRUMBS START
-                    ==============================-->
+
     <section class="breadcrumbs" style="background: url(./assets/images/breadcrumbs_bg.jpg);">
         <div class="breadcrumbs_overly">
             <div class="container">
@@ -20,14 +21,7 @@
             </div>
         </div>
     </section>
-    <!--=============================
-                        BREADCRUMBS END
-                    ==============================-->
 
-
-    <!--=============================
-                        FORGOT PASSWORD START
-                    ==============================-->
     <section class="forgot_password login_area pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row justify-content-center">
@@ -52,7 +46,5 @@
             </div>
         </div>
     </section>
-    <!--=============================
-                        FORGOT PASSWORD END
-                    ==============================-->
+
 @endsection

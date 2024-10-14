@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('title', 'Contact Us')
+
 @section('contente')
 
     <section class="breadcrumbs" style="background: url(./assets/images/breadcrumbs_bg.jpg);">

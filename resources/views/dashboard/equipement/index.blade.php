@@ -1,5 +1,7 @@
 @extends('dashboard.layouts.appAdmin')
+
 @section('title', 'Dashboard Equipements')
+
 @section('contents')
     <div class="dashboard_content">
         <h2 class="dashboard_title"> Dashboard Equipements

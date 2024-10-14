@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('tilte', 'Inscription')
+
 @section('contente')
     <section class="breadcrumbs" style="background: url(./assets/images/breadcrumbs_bg.jpg);">
         <div class="breadcrumbs_overly">
@@ -51,7 +54,8 @@
                                             <label for="password_confirmation"
                                                 class="form-label">{{ __('Confirmer le mot de passe') }}</label>
                                             <input type="password" class="form-control" id="password_confirmation"
-                                                name="password_confirmation"  placeholder="12345678" value="12345678"  required>
+                                                name="password_confirmation" placeholder="12345678" value="12345678"
+                                                required>
                                             <span class="show_confirm_password">
                                                 <i class="far fa-eye open_eye"></i>
                                                 <i class="far fa-eye-slash close_eye"></i>

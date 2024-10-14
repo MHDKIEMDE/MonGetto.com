@@ -1,5 +1,7 @@
 @extends('layouts.app')
+
 @section('title', 'Accueil')
+
 @section('contente')
     <section class="banner_area" style="background: url(./assets/images/banner_bg.jpg);">
         <div class="container container_large">

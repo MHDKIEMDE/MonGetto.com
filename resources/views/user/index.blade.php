@@ -1,4 +1,5 @@
 @extends('dashboard.layouts.appAdmin')
+
 @section('title', 'Personal Information')
 
 @section('contents')

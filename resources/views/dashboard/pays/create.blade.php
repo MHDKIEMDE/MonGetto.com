@@ -1,5 +1,7 @@
 @extends('dashboard.layouts.appAdmin')
 
+@section('tilte', ' Dashboard')
+
 @section('contents')
     <div class="dashboard_content">
         <h2 class="dashboard_title">add Pays
@@ -38,7 +40,7 @@
                         </div>
                         <div class="col-12">
                             <div class="add_property_input">
-                                <button class="common_btn w-25"  type="submit">Valider</button>
+                                <button class="common_btn w-25" type="submit">Valider</button>
                             </div>
                         </div>
                     </div>
