@@ -28,7 +28,7 @@
                             <i class="far fa-heart"></i>
                         </div>
                         {{-- <h3> 37 <span>Nbr de proprieter mis en favoris</span></h3> --}}
-                        <h3> {{ $proprieteCount }} <span>Nbr de visiteur</span></h3>
+                        <h3> {{ $proprieteCount }} <span>Nbr Prises</span></h3>
                     </div>
                 </div>
                 <div class="col-xxl-3 col-md-6 col-xl-6 wow fadeInUp" data-wow-duration="1.5s">
@@ -36,7 +36,7 @@
                         <div class="icon">
                             <i class="far fa-star"></i>
                         </div>
-                        <h3> {{ $proprieteCount }} <span>Nbr de visiteur</span></h3>
+                        <h3> {{ $blogsCount }} <span>Nbr de Blog</span></h3>
                         {{-- <h3> 27 <span>Reviews</span></h3> --}}
                     </div>
                 </div>
@@ -107,13 +107,15 @@
                                     <tbody>
                                         <tr>
                                             <td class="images">
+
                                                 @if ($pro->images && $pro->images->isNotEmpty())
-                                                    <img src="{{ asset($pro->images->first()->url) }}" alt="property"
-                                                        class="img-fluid w-100">
+                                                    <img src="{{ asset('storage/' . $pro->images->first()->url) }}"
+                                                        alt="property" class="img-fluid w-100">
                                                 @else
                                                     <img src="{{ asset('assets/images/property_1.jpg') }}" alt="property"
                                                         class="img-fluid w-100">
                                                 @endif
+
                                             </td>
                                             <td class="details">
                                                 <a class="item_title" href="{{ route('admin.propriete.index') }}">

@@ -13,7 +13,8 @@ class PaysController extends Controller
 
     public function index()
     {
-        $pays = Pays::paginate(10);
+
+        $pays = Pays::orderBy('created_at', 'desc')->paginate(2);
 
         return view('dashboard.pays.index', compact('pays'));
     }

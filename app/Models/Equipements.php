@@ -9,7 +9,7 @@ class Equipements extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['equipements'];
 
     public function proprietes()
     {

@@ -8,27 +8,18 @@ use Illuminate\Http\Request;
 
 class EquipementController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $equipement = Equipements::paginate(10);
+
+        $equipement = Equipements::orderBy('created_at', 'desc')->paginate(2);
 
         return view('dashboard.equipement.index', compact('equipement'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('dashboard.equipement.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(EquipementRequest $request)
     {
         $equipementName = $request->input('equipement');
@@ -43,9 +34,13 @@ class EquipementController extends Controller
         }
     }
 
-    /**
-     * Display the specified resource.
-     */
+
+
+
+
+
+
+
     public function show(string $equipement)
     {
         $equipement = Equipements::findOrFail($equipement);
@@ -53,9 +48,6 @@ class EquipementController extends Controller
         return view('dashboard.equipement.show', compact('equipement'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $equipement)
     {
         $equipement = Equipements::findOrFail($equipement);
@@ -63,9 +55,6 @@ class EquipementController extends Controller
         return view('dashboard.equipement.edit', compact('equipement'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(EquipementRequest $request, string $equipement)
     {
         $equipement = Equipements::findOrFail($equipement);
@@ -74,12 +63,9 @@ class EquipementController extends Controller
 
         $equipement->save();
 
-        return redirect()->route('admin.equipement.index')->with('success', 'Equipement mis à jour avec succès!');; 
+        return redirect()->route('admin.equipement.index')->with('success', 'Equipement mis à jour avec succès!');;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $equipement)
     {
 

@@ -13,7 +13,8 @@ class ContactController extends Controller
 
     public function dashboardReview()
     {
-        $contacts = Contact::paginate(10);
+    
+        $contacts = Contact::orderBy('created_at', 'desc')->paginate(2);
 
         return view('dashboard.dashboard_Review',compact('contacts'));
     }

@@ -16,7 +16,6 @@ class Blog extends Model
         return $this->belongsTo(Blog::class);
     }
 
-
     public function images()
     {
         return $this->hasMany(BlogImage::class);

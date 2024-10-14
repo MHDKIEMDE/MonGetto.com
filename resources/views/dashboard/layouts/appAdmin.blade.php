@@ -76,7 +76,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.propriete.index') }}">
+                        <a href="{{ route('admin.propriete.create') }}">
                             <span>
                                 <img src="{{ asset('assets/images/dashboard_icon_3.png') }}" alt="icon"
                                     class="img-fluid w-100">

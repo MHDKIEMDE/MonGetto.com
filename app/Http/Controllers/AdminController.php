@@ -20,15 +20,16 @@ class AdminController extends Controller
     public function index()
     {
         $users = User::all();
-        $blogs = Blog::paginate(5);
+        $blogs = Blog::orderBy('created_at', 'desc')->paginate(2);
         $userCount = User::count();
         $paysCount = Pays::count();
         $villeCount = Ville::count();
         $quartierCount = Quartier::count();
         $proprieteCount = Propriete::count();
+        $blogsCount = Blog::count();
         $typeMaisonCount = TypeMaison::count();
-        $proprietes = Propriete::paginate(5);
-        return view('dashboard.home.index',  compact('userCount', 'blogs', 'users', 'paysCount', 'villeCount', 'quartierCount', 'proprieteCount', 'typeMaisonCount', 'proprietes'));
+        $proprietes = Propriete::orderBy('created_at', 'desc')->paginate(2);
+        return view('dashboard.home.index',  compact('userCount', 'blogs', 'users', 'paysCount', 'villeCount', 'quartierCount', 'proprieteCount', 'blogsCount', 'typeMaisonCount', 'proprietes'));
     }
 
 

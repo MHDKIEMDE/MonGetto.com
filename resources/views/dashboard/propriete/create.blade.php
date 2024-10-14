@@ -92,7 +92,7 @@
                             <div class="col-xxl-6 col-md-6">
                                 <div class="add_property_input">
                                     <label for="images">Images</label>
-                                    <input type="file" name="images" id="images" placeholder="Images">
+                                    <input type="file" name="images[]" multiple id="images" placeholder="Images">
                                 </div>
                             </div>
                         </div>
@@ -129,7 +129,10 @@
                             <div class="col-xxl-12">
                                 <div class="add_property_input">
                                     <label for="description">Description</label>
-                                    <textarea class="form-control summer_note"></textarea>
+                                    <textarea class="form-control"></textarea>
+                                </div>
+
+                                <div class="add_property_input mt-2">
                                     <button class="common_btn" name="description" id="description"
                                         type="submit">Valider</button>
                                 </div>
@@ -141,7 +144,3 @@
         </div>
     </div>
 @endsection
-
-
-
-

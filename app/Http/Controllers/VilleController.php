@@ -12,8 +12,7 @@ class VilleController extends Controller
 
     public function index()
 {
-
-        $ville = Ville::with('pays')->paginate(10);
+        $ville = Ville::with('pays')->orderBy('created_at', 'desc')->paginate(10);
         
         return view('dashboard.ville.index', compact('ville'));
     }

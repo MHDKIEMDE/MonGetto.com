@@ -33,7 +33,7 @@
                         <div class="col-xxl-6 col-md-6">
                             <div class="add_property_input">
                                 <label for="equipement">Equipement</label>
-                                <input type="text" name="equipement" id="equipement" placeholder="Equipement" required>
+                                <input type="text" name="equipement" id="equipement" placeholder="Equipements" required>
                             </div>
                         </div>
                         <div class="col-12">

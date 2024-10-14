@@ -80,9 +80,10 @@ class UserController extends Controller
 
     public function home()
     {
-        $users = User::paginate(10);
-        $blogs = Blog::paginate(10);
-        $proprietes = Propriete::with('images')->paginate(10);
+  
+        $blogs = Blog::orderBy('created_at', 'desc')->paginate(2);
+        $users = User::orderBy('created_at', 'desc')->paginate(2);
+        $proprietes = Propriete::with('images')->orderBy('created_at', 'desc')->paginate(10);
         $userCount = User::count();
 
         return view('accueil', compact('proprietes', 'blogs', 'users', 'userCount'));

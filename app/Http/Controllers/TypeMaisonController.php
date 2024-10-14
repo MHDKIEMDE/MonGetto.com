@@ -18,7 +18,7 @@ class TypeMaisonController extends Controller
 
     public function index()
     {
-        $typeMaison = TypeMaison::paginate(10);
+        $typeMaison = TypeMaison::orderBy('created_at', 'desc')->paginate(2);
 
         return view('dashboard.typeMaison.index', compact('typeMaison'));
     }

@@ -15,7 +15,7 @@ class QuartierController extends Controller
     public function index()
     {
 
-        $quartier = Quartier::with('ville.pays')->paginate(10);
+        $quartier = Quartier::with('ville.pays')->orderBy('created_at', 'desc')->paginate(10);
         return view('dashboard.quartier.index', compact('quartier'));
     }
 

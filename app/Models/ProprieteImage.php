@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class ProprieteImage extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['filename', 'propriete_id'];
+    protected $fillable = ['name', 'propriete_id', 'url'];
 
     
     public function propriete()

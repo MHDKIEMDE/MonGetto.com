@@ -9,7 +9,7 @@ class Propriete extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['images', 'loyers', 'nbre_C', 'pays_id', 'ville_id', 'google_map', 'description', 'quartier_id', 'equipements', 'typeMaison', 'user_id'];
+    protected $fillable = ['ProprieteImage', 'loyers', 'nbre_C', 'pays_id', 'ville_id', 'google_map', 'description', 'quartier_id', 'equipements', 'typeMaison', 'user_id'];
 
     public function pays()
     {
@@ -33,7 +33,7 @@ class Propriete extends Model
 
     public function images()
     {
-        return $this->hasMany(Image::class);
+        return $this->hasMany(ProprieteImage::class);
     }
 
     public function user()
