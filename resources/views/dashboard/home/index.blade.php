@@ -28,7 +28,7 @@
                             <i class="far fa-heart"></i>
                         </div>
                         {{-- <h3> 37 <span>Nbr de proprieter mis en favoris</span></h3> --}}
-                        <h3> {{ $proprieteCount }} <span>Nbr Prises</span></h3>
+                        <h3> {{ $contactsCount }} <span>Nbr Email</span></h3>
                     </div>
                 </div>
                 <div class="col-xxl-3 col-md-6 col-xl-6 wow fadeInUp" data-wow-duration="1.5s">

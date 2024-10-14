@@ -1,4 +1,5 @@
 @extends('dashboard.layouts.appAdmin')
+
 @section('tilte', 'Blog create')
 
 @section('contents')
@@ -19,7 +20,7 @@
                             <h3>Basic Information</h3>
                             @if (session('success'))
                                 <div class="alert alert-success">
-                                    {{ session('succesbs') }}
+                                    {{ session('success') }}
                                 </div>
                             @endif
                             @if (session('error'))
@@ -52,14 +53,13 @@
                                 <div class="col-xxl-12">
                                     <div class="add_property_input">
                                         <label for="description">Description</label>
-                                        <textarea class="form-control summer_note" name="description" id="description"></textarea>
+                                        <textarea class="form-control" name="description" id="description"></textarea>
                                         <button class="common_btn" type="submit">Valider</button>
                                     </div>
                                 </div>
                             </div>
                     </form>
                 </div>
-
             </div>
         </div>
     </section>
