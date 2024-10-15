@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MonGetto - @yield('title')</title>
-
     <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
@@ -122,6 +121,7 @@
             </a>
             <p class="short_description">Through a combination of lectures, readings, and discussions, students will
                 gain.</p>
+            {{--                 
             <div class="offcanvas_blog">
                 <h3>Featured Listings</h3>
                 @foreach ($proprietes as $pro)
@@ -137,14 +137,15 @@
                                 @endif
                             </div>
                             <div class="text">
-                                <p><i class="far fa-clock"></i> {{ \Carbon\Carbon::parse($pro->created_at)->format('d F Y') }}</p>
+                                <p><i class="far fa-clock"></i>
+                                    {{ \Carbon\Carbon::parse($pro->created_at)->format('d F Y') }}</p>
                                 <a class="title" href="#">{{ $pro->ville->name }} /
                                     {{ $pro->ville->pays->name }}</a>
                             </div>
                         </li>
                     </ul>
                 @endforeach
-            </div>
+            </div> --}}
 
             <div class="offcanvas_contact">
                 <h3>contact information</h3>
@@ -160,9 +161,7 @@
         </div>
     </div>
 
-
     @yield('contente')
-
 
     <footer class="footer">
         <div class="container container_large">
@@ -217,7 +216,6 @@
                         <h4>Contactez-nous</h4>
                         <form method="POST" action="{{ route('contact.store') }}" enctype="multipart/form-data">
                             @csrf
-
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="footer_form_input">

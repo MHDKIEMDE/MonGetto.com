@@ -8,7 +8,7 @@
     <div class="dashboard_content">
         <h2 class="dashboard_title"> Dashboard Ville
             <a class="common_btn" href="{{ route('admin.ville.create') }}">+ Add Ville</a>
-            <a class="common_btn" href="{{ route('admin.quartier.index') }}">+ Show Quartier</a>
+            <a class="common_btn" href="{{ route('admin.quatier.index') }}">+ Show Quatier</a>
             <a class="common_btn" href="{{ route('admin.pays.index') }}">+ show Pays</a>
         </h2>
         <div class="dashboard_order wow fadeInUp" data-wow-duration="1.5s">

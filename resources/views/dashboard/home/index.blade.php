@@ -80,13 +80,14 @@
                                         <span class="fill" data-percentage="80"></span>
                                     </div>
                                 </div>
+                               
                                 <div class="single_bar">
                                     <p>Type de Model <span>{{ $typeMaisonCount }}</span></p>
                                     <div id="bar8" class="barfiller">
                                         <div class="tipWrap">
                                             <span class="tip"></span>
                                         </div>
-                                        <span class="fill" data-percentage="80"></span>
+                                        <span class="fill" data-percentage="70"></span>
                                     </div>
                                 </div>
                             </div>

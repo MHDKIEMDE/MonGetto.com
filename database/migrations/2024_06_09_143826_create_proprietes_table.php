@@ -19,7 +19,7 @@ return new class extends Migration
             $table->decimal('loyers', 10, 2);
             $table->string('equipements')->nullable();
             $table->string('google_map')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 

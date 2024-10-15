@@ -43,8 +43,8 @@ class ContactController extends Controller
         $contact->number = $request->input('number');
         $contact->message = $request->input('message');
         $contact->save();
+        return redirect()->back()->with('success', 'Message envoyé avec succès!');
 
-        return redirect()->back();
     }
 
     public function show(string $blog)

@@ -41,7 +41,6 @@
                                 </a>
                             @endif
 
-
                             <div class="blog_text">
 
                                 <ul class="d-flex flex-wrap">

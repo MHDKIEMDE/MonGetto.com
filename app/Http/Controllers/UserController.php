@@ -21,7 +21,7 @@ class UserController extends Controller
             return redirect()->route('login');
         }
     }
-
+    
     public function create()
     {
         return view('dashboard.user.create');

@@ -12,14 +12,14 @@ class VilleController extends Controller
 
     public function index()
 {
-        $ville = Ville::with('pays')->orderBy('created_at', 'desc')->paginate(10);
+        $ville = Ville::with('pays')->orderBy('id', 'asc')->paginate(20);
         
         return view('dashboard.ville.index', compact('ville'));
     }
 
     public function create()
     {
-        $pays = Pays::all();
+        $pays = Pays::orderBy('name', 'asc')->get();
 
         return view('dashboard.ville.create', compact('pays'));
     }
@@ -79,9 +79,10 @@ class VilleController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy(string $ville)
     {
-        $ville = Ville::findOrFail($id);
+
+        $ville = Ville::findOrFail($ville);
         $ville->delete();
 
         return redirect()->route('admin.ville.index')->with('success', 'Ville et ses quatiers supprimés avec succès!');

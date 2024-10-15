@@ -14,7 +14,7 @@ class PaysController extends Controller
     public function index()
     {
 
-        $pays = Pays::orderBy('created_at', 'desc')->paginate(2);
+        $pays = Pays::orderBy('id', 'asc')->paginate(10);
 
         return view('dashboard.pays.index', compact('pays'));
     }
@@ -43,7 +43,7 @@ class PaysController extends Controller
     {
         $pays = Pays::findOrFail($pay);
 
-        return view('dashboard.pays.show', compact('Pays', 'quatier', 'ville'));
+        return view('dashboard.pays.show', compact('pays'));
     }
 
 
@@ -66,9 +66,9 @@ class PaysController extends Controller
         return redirect()->route('admin.pays.index')->with('success', 'Pays mis à jour avec succès!');
     }
 
-    public function destroy($id)
+    public function destroy($pays)
     {
-        $pays = Pays::findOrFail($id);
+        $pays = Pays::findOrFail($pays);
         $pays->delete();
 
         return redirect()->route('admin.pays.index')->with('success', 'Pays et ses villes et quatiers supprimés avec succès!');

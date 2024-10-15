@@ -12,7 +12,7 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::orderBy('created_at', 'desc')->paginate(2);
+        $blogs = Blog::orderBy('created_at', 'desc')->paginate(10);
 
         return view('blog.index', compact('blogs'));
     }
@@ -23,32 +23,27 @@ class BlogController extends Controller
         return view('blog.create');
     }
 
-
     public function store(BlogRequest $request)
     {
-        // Création d'un nouveau blog avec les données validées
         $blog = new Blog();
         $blog->user_id = auth()->user()->id;
         $blog->name = $request->input('name');
         $blog->description = $request->input('description');
         $blog->save();
 
-        // Enregistrement des images associées au blog dans la table 'blog_images'
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
-                // Stockage de l'image dans 'public/blog_images'
                 $imagePath = $image->store('blog_images', 'public');
 
-                // Création d'une nouvelle entrée dans la table 'blog_images' liée au blog
                 $imageModel = new BlogImage();
-                $imageModel->url = $imagePath; // Stockage du chemin relatif dans la base de données
-                // Association de l'image au blog
+                $imageModel->url = $imagePath;
                 $blog->images()->save($imageModel);
             }
         }
-        // Redirection avec message de succès
         return redirect()->route('blog.create')->with('success', 'Blog ajouté avec succès!');
     }
+
+
 
     public function show(string $blog)
     {
@@ -56,6 +51,7 @@ class BlogController extends Controller
 
         return view('blog.show', compact('blogs'));
     }
+
 
     public function edit(string $pay)
     {

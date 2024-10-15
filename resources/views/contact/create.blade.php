@@ -9,25 +9,6 @@
                 <div class="row">
                     <div class="col-12 justify-content-center">
                         <div class="breadcrumb_text wow fadeInUp" data-wow-duration="1.5s">
-                            @if (session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
-                        @if (session('error'))
-                            <div class="alert alert-danger">
-                                {{ session('error') }}
-                            </div>
-                        @endif
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif˝
                             <h1>Contact Us</h1>
                             <ul class="d-flex flex-wrap justify-content-center">
                                 <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
@@ -47,21 +28,24 @@
                         <h4>Get In Touch</h4>
                         <ul>
                             <li>
-                                <span><img src="{{ asset('assets/images/location.png') }}" alt="icon" class="img-fluid w-100"></span>
+                                <span><img src="{{ asset('assets/images/location.png') }}" alt="icon"
+                                        class="img-fluid w-100"></span>
                                 <div class="contact_address_text">
                                     <p>Office address</p>
                                     <a class="item_title" href="#">New York, NY 10128, United States</a>
                                 </div>
                             </li>
                             <li>
-                                <span><img src="{{ asset('assets/images/call.png') }}" alt="icon" class="img-fluid w-100"></span>
+                                <span><img src="{{ asset('assets/images/call.png') }}" alt="icon"
+                                        class="img-fluid w-100"></span>
                                 <div class="contact_address_text">
                                     <p>Request a call back</p>
                                     <a class="item_title" href="#">+(088) 777 548 - 5643</a>
                                 </div>
                             </li>
                             <li>
-                                <span><img src="{{ asset('assets/images/massage_3.png') }}" alt="icon" class="img-fluid w-100"></span>
+                                <span><img src="{{ asset('assets/images/massage_3.png') }}" alt="icon"
+                                        class="img-fluid w-100"></span>
                                 <div class="contact_address_text">
                                     <p>Email with us</p>
                                     <a class="item_title" href="#">example@gmail.com</a>
@@ -71,14 +55,34 @@
                     </div>
                 </div>
                 <div class="col-xxl-7 col-lg-7 wow fadeInRight" data-wow-duration="1.5s">
-                        <form method="POST" action="{{ route('contact.store') }}" enctype="multipart/form-data">
-                            @csrf
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form method="POST" action="{{ route('contact.store') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="row">
                             <div class="col-md-6 col-lg-12 col-xl-6">
                                 <div class="contact_input">
-                                    <input type="text" name="name" id="name"  placeholder="Your Name">
+                                    <input type="text" name="name" id="name" placeholder="Your Name">
                                     <span class="contact_input_icon">
-                                        <img src="{{ asset('assets/images/user_icon_3.png') }}" alt="icon" class="img-fluid w-100">
+                                        <img src="{{ asset('assets/images/user_icon_3.png') }}" alt="icon"
+                                            class="img-fluid w-100">
                                     </span>
                                 </div>
                             </div>
@@ -87,7 +91,8 @@
                                 <div class="contact_input">
                                     <input type="email" name="email" id="email" placeholder="Entre votre Email">
                                     <span class="contact_input_icon">
-                                        <img src="{{ asset('assets/images/massage_4.png') }}" alt="icon" class="img-fluid w-100">
+                                        <img src="{{ asset('assets/images/massage_4.png') }}" alt="icon"
+                                            class="img-fluid w-100">
                                     </span>
                                 </div>
                             </div>
@@ -96,11 +101,12 @@
                                 <div class="contact_input">
                                     <input type="text" name="number" id="number" placeholder="Entre votre Numero">
                                     <span class="contact_input_icon">
-                                        <img src="{{ asset('assets/images/call_2.png') }}" alt="icon" class="img-fluid w-100">
+                                        <img src="{{ asset('assets/images/call_2.png') }}" alt="icon"
+                                            class="img-fluid w-100">
                                     </span>
                                 </div>
                             </div>
-                           
+
                             <div class="col-md-12">
                                 <div class="contact_input">
                                     <textarea rows="6" name="message" id="message" placeholder="Write Message..."></textarea>

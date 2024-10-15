@@ -20,7 +20,6 @@
             </div>
         </div>
     </section>
-
     <section class="blog_details pt_120 xs_pt_100 pb_120 xs_pb_100">
         <div class="container">
             <div class="row">
@@ -203,19 +202,17 @@
                                 @foreach ($blogs as $blog)
                                     <div class="popular_blog d-flex flex-wrap">
                                         <div class="popular_blog_img">
-
-
-                                           
-
-
                                             @if ($blog->images && $blog->images->isNotEmpty())
-                                                <img src="{{ asset('images/blog_images/' . $blog->images->first()->url) }}"
-                                                    alt="property" class="img-fluid w-100">
+                                                <a href="{{ route('blog.show', $blog->id) }}" class="blog_img">
+                                                    <img src="{{ asset('storage/' . $blog->images->first()->url) }}"
+                                                        alt="img" class="img-fluid w-100">
+                                                </a>
                                             @else
-                                                <img src="{{ asset('assets/images/popular_blog_1.jpg') }}" alt="img"
-                                                    class="img-fluid w-100">
+                                                <a href="{{ route('blog.show', $blog->id) }}" class="blog_img">
+                                                    <img src="{{ asset('assets/images/blog_1.jpg') }}" alt="img"
+                                                        class="img-fluid w-100">
+                                                </a>
                                             @endif
-
                                         </div>
                                         <div class="popular_blog_text">
                                             <p>
