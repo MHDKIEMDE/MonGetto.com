@@ -108,103 +108,35 @@
                     </div>
                 </div>
             </div>
+
             <div class="row wow fadeInUp" data-wow-duration="1.5s">
                 <div class="col-xl-12">
                     <ul class="single_amenites d-flex flex-wrap justify-content-center">
-                        <li>
-                            <a href="#">
-                                <span><img src="{{ asset('assets/images/amenities_img_1.png') }}" alt="img"
-                                        class="img-fluid w-100"></span>
-                                Smart TV
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span><img src="{{ asset('assets/images/amenities_img_4.png') }}" alt="img"
-                                        class="img-fluid w-100"></span>
-                                Swimming Pool
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span><img src="{{ asset('assets/images/amenities_img_3.png') }}" alt="img"
-                                        class="img-fluid w-100"></span>
-                                Elevator
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span><img src="{{ asset('assets/images/amenities_img_4.png') }}" alt="img"
-                                        class="img-fluid w-100"></span>
-                                Walk In Closets
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span><img src="{{ asset('assets/images/amenities_img_5.png') }}" alt="img"
-                                        class="img-fluid w-100"></span>
-                                Solar Panel
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span><img src="{{ asset('assets/images/amenities_img_11.png') }}" alt="img"
-                                        class="img-fluid w-100"></span>
-                                CC Camera
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span><img src="{{ asset('assets/images/amenities_img_6.png') }}" alt="img"
-                                        class="img-fluid w-100"></span>
-                                Air Conditioner
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span><img src="{{ asset('assets/images/amenities_img_7.png') }}" alt="img"
-                                        class="img-fluid w-100"></span>
-                                Fireplace
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span><img src="{{ asset('assets/images/amenities_img_12.png') }}" alt="img"
-                                        class="img-fluid w-100"></span>
-                                Garage
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span><img src="{{ asset('assets/images/amenities_img_8.png') }}" alt="img"
-                                        class="img-fluid w-100"></span>
-                                Fireplace
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span><img src="{{ asset('assets/images/amenities_img_10.png') }}" alt="img"
-                                        class="img-fluid w-100"></span>
-                                Garden
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span><img src="{{ asset('assets/images/amenities_img_9.png') }}" alt="img"
-                                        class="img-fluid w-100"></span>
-                                Jacuzzi
-                            </a>
-                        </li>
+
+                        @foreach ($equipements as $equipment)
+                            <li>
+                                <a href="#">
+                                    <span>
+                                        @php
+                                            $imagePath =
+                                                'assets/images/equipements/' .
+                                                strtolower(str_replace(' ', '_', $equipment->name)) .
+                                                '.png';
+                                        @endphp
+                                        @if (file_exists(public_path($imagePath)))
+                                            <img src="{{ asset($imagePath) }}" alt="{{ $equipment->name }}"
+                                                class="img-fluid w-100">
+                                        @endif
+                                    </span>
+                                    {{ $equipment->name }}
+                                </a>
+                            </li>
+                        @endforeach
+
                     </ul>
                 </div>
             </div>
-            <div class="row wow fadeInUp" data-wow-duration="1.5s">
-                <div class="col-xl-12">
-                    <div class="amenities_area_btn mt_50">
-                        <a class="common_btn_2" href="#">prowse property<i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section>
     <section class="agent_area pt_115 xs_pt_95">

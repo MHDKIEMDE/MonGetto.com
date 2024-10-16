@@ -40,19 +40,15 @@
                     <div class="img">
                         <img src="{{ asset('storage/' . $user->profile_image) }}" alt="dashboard"
                             class="img-fluid w-100">
-                            
                         {{-- <label for="profile_photo"><i class="far fa-camera"></i></label>
                         <input type="file" id="profile_photo" hidden> --}}
                     </div>
                 @else
                     <div class="img">
-
                         <img src="{{ asset('assets/images/default_img.jpg') }}" alt="dashboard"
                             class="img-fluid w-100">
-
                         {{-- <label for="profile_photo"><i class="far fa-camera"></i></label>
                         <input type="file" id="profile_photo" hidden> --}}
-
                     </div>
                 @endif
 

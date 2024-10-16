@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('Title', 'Show property')
+@section('title', 'Show propriete')
 
 @section('contente')
 <section class="breadcrumbs" style="background: url(./assets/images/breadcrumbs_bg.jpg);">

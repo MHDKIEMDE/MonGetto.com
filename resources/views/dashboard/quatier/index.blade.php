@@ -1,8 +1,6 @@
 @extends('dashboard.layouts.appAdmin')
 
-@section('title')
-    Dashboard Quatiers
-@endsection
+@section('tilte', 'Quatier')
 
 @section('contents')
     <div class="dashboard_content">

@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.appAdmin')
-
+@section('tilte', 'Maison')
 @section('title', 'Dashboard Pays')
 
 

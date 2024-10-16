@@ -1,5 +1,5 @@
 @extends('dashboard.layouts.appAdmin')
-
+@section('tilte', 'Edit Maison')
 @section('contents')
     <div class="dashboard_content">
         <h2 class="dashboard_title">Modifier</h2>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRespuest;
 use App\Models\Blog;
+use App\Models\Equipements;
 use App\Models\Propriete;
 use App\Models\User;
 use App\Models\UserImage;
@@ -21,7 +22,7 @@ class UserController extends Controller
             return redirect()->route('login');
         }
     }
-    
+
     public function create()
     {
         return view('dashboard.user.create');
@@ -96,7 +97,9 @@ class UserController extends Controller
         $blogs = Blog::paginate(10);
         $proprietes = Propriete::with('images')->paginate(10);
         $userCount = User::count();
-        return view('apropos', compact('proprietes', 'blogs', 'users', 'userCount'));
+        $equipements = Equipements::orderBy('created_at', 'desc')->paginate(10);
+        
+        return view('apropos', compact('proprietes', 'blogs', 'users', 'userCount', 'equipements'));
     }
 
 

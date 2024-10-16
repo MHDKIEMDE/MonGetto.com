@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.appAdmin')
 
-@section('title', 'Dashboard Pays')
+@section('tilte', 'Pays')
 
 @section('contents')
 <div class="dashboard_content">

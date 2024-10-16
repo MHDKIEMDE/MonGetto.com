@@ -845,13 +845,25 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 @foreach ($users as $user)
                     <div class="col-xl-3 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1.5s">
                         <div class="single_agent">
                             <div class="single_agent_img">
-                                <img src="assets/images/agent_1.jpg" alt="img" class="img-fluid w-100">
+
+                                @if ($user->images && $user->images->isNotEmpty())
+                                
+                                <a href="{{ route('blog.show', $user->id) }}" class="blog_img">
+                                    <img src="{{ asset('storage/' . $user->images->first()->url) }}" alt="img"
+                                        class="img-fluid w-100">
+                                </a>
+                            @else
+                                <div class="img">
+                                    <img src="{{ asset('assets/images/default_img.jpg') }}" alt="img-fluid w-100"
+                                        class="img-fluid w-100">
+                                </div>
+                            @endif
+
                                 <div class="single_agent_overly">
                                     <p>{{ $user->proprieteCount }} 4 Proprietes</p>
                                     <ul class="d-flex flex-wrap">

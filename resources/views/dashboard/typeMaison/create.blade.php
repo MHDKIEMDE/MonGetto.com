@@ -1,5 +1,7 @@
 @extends('dashboard.layouts.appAdmin')
 
+@section('tilte', 'Add Maison')
+
 @section('contents')
     <div class="dashboard_content">
         <h2 class="dashboard_title">add Type De Maison
