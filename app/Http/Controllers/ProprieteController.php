@@ -20,7 +20,7 @@ class ProprieteController extends Controller
     {
         $proprietes = Propriete::with(['images', 'user'])->orderBy('created_at', 'desc')->paginate(10);
 
-        return view('propriete.index', compact('proprietes'));
+        return view('dashboard.propriete.liste', compact('proprietes'));
     }
 
     public function index2()
@@ -40,7 +40,6 @@ class ProprieteController extends Controller
 
     public function index4()
     {
-
         $proprietes = Propriete::with(['images', 'user'])->orderBy('created_at', 'desc')->paginate(10);
 
         return view('propriete.propriete_rs', compact('proprietes'));

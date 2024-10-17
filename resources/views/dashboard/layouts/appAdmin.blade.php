@@ -1,7 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mongetto - @yield('tilte') </title>
@@ -23,14 +23,12 @@
 </head>
 
 <body>
-
     <section class="dashboard">
         <div class="dashboard_sidebar">
             <div class="sidebar_menu_icon">
                 <i class="fas fa-bars dash_bar_icon"></i>
                 <i class="far fa-times dash_close_icon"></i>
             </div>
-
             <a class="dashboard_sidebar_logo" href="{{ route('admin.home.index') }}">
                 <img src="{{ asset('assets/images/logo_1.png') }}" alt="MonGetto" class="img-fluid w-100">
             </a>
@@ -38,17 +36,22 @@
 
                 @if (Auth::user()->profile_image)
                     <div class="img">
-                        <img src="{{ asset('storage/' . $user->profile_image) }}" alt="dashboard"
+                        <img src="{{ asset('storage/' . $user->profile_image) }}"
+                            alt="Photo de profile de {{ Auth::user()->prenom }} {{ Auth::user()->name }}"
                             class="img-fluid w-100">
+
                         {{-- <label for="profile_photo"><i class="far fa-camera"></i></label>
                         <input type="file" id="profile_photo" hidden> --}}
+
                     </div>
                 @else
                     <div class="img">
                         <img src="{{ asset('assets/images/default_img.jpg') }}" alt="dashboard"
                             class="img-fluid w-100">
+
                         {{-- <label for="profile_photo"><i class="far fa-camera"></i></label>
                         <input type="file" id="profile_photo" hidden> --}}
+
                     </div>
                 @endif
 
@@ -76,8 +79,9 @@
                             Profil
                         </a>
                     </li>
+
                     <li>
-                        <a href="{{ route('admin.propriete.create') }}">
+                        <a href="{{ route('admin.propriete.index') }}">
                             <span>
                                 <img src="{{ asset('assets/images/dashboard_icon_3.png') }}" alt="icon"
                                     class="img-fluid w-100">
@@ -85,6 +89,7 @@
                             Propriété
                         </a>
                     </li>
+                    
                     <li>
                         <a href="{{ route('admin.pricing') }}">
                             <span>
@@ -96,7 +101,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('admin.propriete.liste') }}">
+                        <a href="{{ route('admin.equipement.index') }}">
                             <span>
                                 <img src="{{ asset('assets/images/dashboard_icon_7.png') }}" alt="icon"
                                     class="img-fluid w-100">

@@ -28,6 +28,7 @@
                                     <td class="serial">{{ $p->id }}</td>
                                     <td class="package">{{ $p->name }}</td>
                                     <td class="date">{{ $p->created_at }}</td>
+
                                     <td class="action">
                                         <form action="{{ route('admin.pays.edit', ['pay' => $p->id]) }}" method="GET"
                                             style="display:inline;">
@@ -36,6 +37,7 @@
                                                 <i class="far fa-pen-alt"></i> Edit
                                             </button>
                                         </form>
+
                                         <form action="{{ route('admin.pays.destroy', $p->id) }}" method="POST"
                                             style="display:inline;">
                                             @csrf
@@ -44,7 +46,9 @@
                                                 <i class="far fa-trash-alt"></i> Delete
                                             </button>
                                         </form>
+
                                     </td>
+                                    
                                 </tr>
                             @endforeach
                         </tbody>

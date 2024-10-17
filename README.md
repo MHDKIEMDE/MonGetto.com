@@ -64,3 +64,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+<  
+
+
+
+8:12 / 9:50
+
+
+Laravel 11 - How to send whatsapp message/notification in laravel in (English)  >

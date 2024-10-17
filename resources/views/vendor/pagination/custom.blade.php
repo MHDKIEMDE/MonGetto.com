@@ -1,4 +1,5 @@
 @if ($paginator->hasPages())
+
     <nav aria-label="...">
         <ul class="pagination justify-content-start">
             {{-- Previous Page Link --}}

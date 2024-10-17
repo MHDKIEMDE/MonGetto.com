@@ -98,7 +98,6 @@ class UserController extends Controller
         $proprietes = Propriete::with('images')->paginate(10);
         $userCount = User::count();
         $equipements = Equipements::orderBy('created_at', 'desc')->paginate(10);
-        
         return view('apropos', compact('proprietes', 'blogs', 'users', 'userCount', 'equipements'));
     }
 

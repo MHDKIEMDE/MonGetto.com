@@ -830,7 +830,7 @@
                     </div>
                 @endforeach
                 <div class="text-center mt_50 wow fadeInUp" data-wow-duration="1.5s">
-                    <a class="common_btn" href="#">Voir Plus</a>
+                    <a class="common_btn" href="{{ route('propriete.index') }}">Voir Plus</a>
                 </div>
             </div>
         </div>
@@ -852,17 +852,16 @@
                             <div class="single_agent_img">
 
                                 @if ($user->images && $user->images->isNotEmpty())
-                                
-                                <a href="{{ route('blog.show', $user->id) }}" class="blog_img">
-                                    <img src="{{ asset('storage/' . $user->images->first()->url) }}" alt="img"
-                                        class="img-fluid w-100">
-                                </a>
-                            @else
-                                <div class="img">
-                                    <img src="{{ asset('assets/images/default_img.jpg') }}" alt="img-fluid w-100"
-                                        class="img-fluid w-100">
-                                </div>
-                            @endif
+                                    <a href="{{ route('blog.show', $user->id) }}" class="blog_img">
+                                        <img src="{{ asset('storage/' . $user->images->first()->url) }}" alt="img"
+                                            class="img-fluid w-100">
+                                    </a>
+                                @else
+                                    <div class="img">
+                                        <img src="{{ asset('assets/images/default_img.jpg') }}" alt="img-fluid w-100"
+                                            class="img-fluid w-100">
+                                    </div>
+                                @endif
 
                                 <div class="single_agent_overly">
                                     <p>{{ $user->proprieteCount }} 4 Proprietes</p>
@@ -895,7 +894,7 @@
         </div>
     </section>
 
-    {{-- <section class="find_state" style="background: url(./assets/images/find_state.jpg);">
+    <section class="find_state" style="background: url(./assets/images/find_state.jpg);">
         <div id="vbg12" data-vbg-loop="true" data-vbg="https://youtu.be/tGntcmNJWPI?si=phoJuQEhsIKRtJxF">
         </div>
         <div class="container">
@@ -903,13 +902,12 @@
                 <div class="col-xl-12">
                     <div class="find_state_text">
                         <h2>Residential</h2>
-                        <a href="#">Découvrez le projet<i
-                                class="fas fa-arrow-right"></i></a>
+                        <a href="#">Découvrez le projet<i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
 
     <section class="blog_area pt_115 xs_pt_95 pb_120 xs_pb_100">
         <div class="container">

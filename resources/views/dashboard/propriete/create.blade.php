@@ -5,7 +5,7 @@
 @section('contents')
     <div class="dashboard_content">
         <h2 class="dashboard_title">add property
-            <a class="common_btn" href="{{ route('admin.propriete.index') }}">all properties</a>
+            <a class="common_btn" href="{{ route('admin.propriete.index') }}">All properties</a>
         </h2>
         <div class="dashboard_add_property">
             <form method="POST" action="{{ route('admin.propriete.store') }}" enctype="multipart/form-data">
@@ -33,6 +33,7 @@
                     @endif
                     <div class="add_property_info wow fadeInUp" data-wow-duration="1.5s">
                         <div class="row">
+
                             <div class="col-xxl-6 col-md-6">
                                 <label for="pays"> Pays</label>
                                 <select class="form-select" name="pays_id" id="pays"
@@ -43,7 +44,9 @@
                                     @endforeach
                                 </select>
                             </div>
+
                             <div class="col-xxl-6 col-md-6">
+
                                 <label for="ville">Ville</label>
                                 <select class="form-select" name="ville_id" id="ville"
                                     aria-label="Default select example">
@@ -129,12 +132,11 @@
                             <div class="col-xxl-12">
                                 <div class="add_property_input">
                                     <label for="description">Description</label>
-                                    <textarea class="form-control"></textarea>
+                                    <textarea class="form-control" name="description" id="description"></textarea>
                                 </div>
 
                                 <div class="add_property_input mt-2">
-                                    <button class="common_btn" name="description" id="description"
-                                        type="submit">Valider</button>
+                                    <button class="common_btn"type="submit">Valider</button>
                                 </div>
                             </div>
                         </div>

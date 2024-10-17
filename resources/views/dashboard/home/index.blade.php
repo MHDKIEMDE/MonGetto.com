@@ -109,7 +109,6 @@
                                     <tbody>
                                         <tr>
                                             <td class="images">
-
                                                 @if ($pro->images && $pro->images->isNotEmpty())
                                                     <img src="{{ asset('storage/' . $pro->images->first()->url) }}"
                                                         alt="property" class="img-fluid w-100">
@@ -132,23 +131,25 @@
                                             <td class="status">
                                                 <span class="approved">approved</span>
                                             </td>
+
                                             <td class="action">
                                                 <form
                                                     action="{{ route('admin.propriete.edit', ['propriete' => $pro->id]) }}"
                                                     method="GET" style="display:inline;">
                                                     @csrf
                                                     <button type="submit" class="btn btn-primary">
-                                                        <i class="far fa-pen-alt"></i> Edit
+                                                        <i class="far fa-pen-alt"></i>
                                                     </button>
                                                 </form>
                                                 <form action="{{ route('admin.propriete.destroy', $pro->id) }}"
                                                     method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">
+                                                    <button type="submit" class="btn" style="background-color: #ffe900; color:#031a26;">
                                                         <i class="far fa-trash-alt"></i>
                                                 </form>
                                             </td>
+                                            
                                         </tr>
                                     </tbody>
                                 @endforeach

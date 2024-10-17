@@ -11,6 +11,7 @@ return new class extends Migration
     {
         Schema::create('proprietes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('pays_id');
             $table->unsignedBigInteger('ville_id');
             $table->unsignedBigInteger('quatier_id');
@@ -20,7 +21,6 @@ return new class extends Migration
             $table->string('equipements')->nullable();
             $table->string('google_map')->nullable();
             $table->text('description')->nullable();
-            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
         });
